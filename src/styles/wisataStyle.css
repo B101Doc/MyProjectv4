@@ -100,3 +100,42 @@
     font-size: 11px;
     color: #A0AC9B;
 }
+#side_news{
+    margin-bottom: 10px;
+    width: 33vw;
+    margin-right: 50px;
+}
+.SideNewsContent{
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0px 15px 15px 15px;
+    padding-bottom: 85px;
+    background-color: #F5F5F5;
+    width: fit-content;
+}
+.SideNewsContent img{
+    width: 110px;
+}
+.separator{
+    border: 0.1px solid black;
+    width: 89%;
+    margin: auto;
+}
+#sideBerita{
+    padding: 45px 20px 5px 40px;
+    display: flex;
+}
+#sideBerita p{
+    margin-left: 10px;
+    padding-bottom: 5px;
+    color: black;
+    text-decoration: underline #F5F5F5;
+}
+.date p {
+    margin-top: 6px;
+    margin-left: 5px;
+    font-size: 11px;
+    color: #A0AC9B;
+}
+.date{
+    display: flex;
+}

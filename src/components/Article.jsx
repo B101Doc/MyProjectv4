@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import './Article.css'
+import sideNews from "./sideNews";
+import DateLogo from "../assets/dateLogo.png";
 
 const HeaderArtikel = ({ title, iconSrc }) => {
     return (
@@ -30,58 +32,55 @@ const Article = ({articles}) => {
     }else{
         article={}
     }
-     
-    console.log("Article Object")
-    console.log(article)
 
-    // const articles=[
-    //   {
-    //     "id":1,
-    //     "title":"Mercedes Copy Pasta",
-    //     "coverImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5-C0MRKXZlJ3D3TOVJf5959bmex_WpdsMfA&s",
-    //     "content": "No problem! Here's the information about the Mercedes CLR GTR The Mercedes CLR GTR is a remarkable racing car celebrated for its outstanding performance and sleek design. Powered by a potent 6.0-liter V12 engine, it delivers over 600 horsepower. Acceleration from 0 to 100 km/h takes approximately 3.7 seconds, with a remarkable top speed surprising 320 km/h.🥇 Incorporating adventure aerodynamic features and cutting-edge stability technologies, the CLR GTR ensures exceptional stability and control, particularly during high-speed maneuvers. 💨 Originally priced at around $1.5 million, the Mercedes CLR GTR is considered one of the most exclusive and prestigious racing cars ever produced. 💰Its limited production run of just five units adds to its rarity, making it highly sought after by racing enthusiasts and collectors worldwide. 🌎"
-    //   },
-    //   {
-    //     "id":2,
-    //     "title":"Mercedes Copy Pasta",
-    //     "coverImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5-C0MRKXZlJ3D3TOVJf5959bmex_WpdsMfA&s",
-    //     "content": "No problem! Here's the information about the Mercedes CLR GTR The Mercedes CLR GTR is a remarkable racing car celebrated for its outstanding performance and sleek design. Powered by a potent 6.0-liter V12 engine, it delivers over 600 horsepower. Acceleration from 0 to 100 km/h takes approximately 3.7 seconds, with a remarkable top speed surprising 320 km/h.🥇 Incorporating adventure aerodynamic features and cutting-edge stability technologies, the CLR GTR ensures exceptional stability and control, particularly during high-speed maneuvers. 💨 Originally priced at around $1.5 million, the Mercedes CLR GTR is considered one of the most exclusive and prestigious racing cars ever produced. 💰Its limited production run of just five units adds to its rarity, making it highly sought after by racing enthusiasts and collectors worldwide. 🌎"
-    //   },
-    //   {
-    //     "id":3,
-    //     "title":"Mercedes Copy Pasta",
-    //     "coverImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5-C0MRKXZlJ3D3TOVJf5959bmex_WpdsMfA&s",
-    //     "content": "No problem! Here's the information about the Mercedes CLR GTR The Mercedes CLR GTR is a remarkable racing car celebrated for its outstanding performance and sleek design. Powered by a potent 6.0-liter V12 engine, it delivers over 600 horsepower. Acceleration from 0 to 100 km/h takes approximately 3.7 seconds, with a remarkable top speed surprising 320 km/h.🥇 Incorporating adventure aerodynamic features and cutting-edge stability technologies, the CLR GTR ensures exceptional stability and control, particularly during high-speed maneuvers. 💨 Originally priced at around $1.5 million, the Mercedes CLR GTR is considered one of the most exclusive and prestigious racing cars ever produced. 💰Its limited production run of just five units adds to its rarity, making it highly sought after by racing enthusiasts and collectors worldwide. 🌎"
-    //   },
-    //   {
-    //     "id":4,
-    //     "title":"Mercedes Copy Pasta",
-    //     "coverImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5-C0MRKXZlJ3D3TOVJf5959bmex_WpdsMfA&s",
-    //     "content": "No problem! Here's the information about the Mercedes CLR GTR The Mercedes CLR GTR is a remarkable racing car celebrated for its outstanding performance and sleek design. Powered by a potent 6.0-liter V12 engine, it delivers over 600 horsepower. Acceleration from 0 to 100 km/h takes approximately 3.7 seconds, with a remarkable top speed surprising 320 km/h.🥇 Incorporating adventure aerodynamic features and cutting-edge stability technologies, the CLR GTR ensures exceptional stability and control, particularly during high-speed maneuvers. 💨 Originally priced at around $1.5 million, the Mercedes CLR GTR is considered one of the most exclusive and prestigious racing cars ever produced. 💰Its limited production run of just five units adds to its rarity, making it highly sought after by racing enthusiasts and collectors worldwide. 🌎"
-    //   },
-    //   {
-    //     "id":5,
-    //     "title":"Mercedes Copy Pasta",
-    //     "coverImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5-C0MRKXZlJ3D3TOVJf5959bmex_WpdsMfA&s",
-    //     "content": "No problem! Here's the information about the Mercedes CLR GTR The Mercedes CLR GTR is a remarkable racing car celebrated for its outstanding performance and sleek design. Powered by a potent 6.0-liter V12 engine, it delivers over 600 horsepower. Acceleration from 0 to 100 km/h takes approximately 3.7 seconds, with a remarkable top speed surprising 320 km/h.🥇 Incorporating adventure aerodynamic features and cutting-edge stability technologies, the CLR GTR ensures exceptional stability and control, particularly during high-speed maneuvers. 💨 Originally priced at around $1.5 million, the Mercedes CLR GTR is considered one of the most exclusive and prestigious racing cars ever produced. 💰Its limited production run of just five units adds to its rarity, making it highly sought after by racing enthusiasts and collectors worldwide. 🌎"
-    //   },
-    // ]
-
-  
-
+    const sideNews = articles.data.slice(0, 3).sort((a, b) => new Date(b.attributes.publishedAt) - new Date(a.attributes.publishedAt))
+         
+    console.log('Article Object: ', article, sideNews)
   return (    
     <>      
         <HeaderArtikel 
         iconSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/1d320f8d89b47010171b3bb9d12cb64d2abb82d649b558d2cd6b02d5d9e50f18?apiKey=236d0a87b9ca46baa5b67a2b5a718b65&"
         title='Artikel Kelurahan Ngaglik'
         />
+        <div className="article-page-content">
        <div className="article-container">
             <img 
             className="article-cover"
             src={`http://localhost:1337${article.attributes.coverArtikel.data.attributes.url}`}/>
+            <div className="article-content">
             <h1 className="article-title">{article.attributes.judulArtikel}</h1>
             <div className="article-text"><p>{article.attributes.teksArtikel}</p></div>
-        </div>       
+            </div>
+        </div>
+        <div className="side-news">
+        <div class="title">
+            <h5>
+              <b>BERITA TERKINI KELURAHAN NGAGLIK</b>
+            </h5>
+          </div>
+          <div className="SideNewsContent">
+            {sideNews.map((sideNew) => (
+              <div className="beritaTerkini">
+                <div class="container" id="sideBerita">
+                  <Link to={"/berita"}>
+                    <img src={`http://localhost:1337${sideNew.attributes.coverArtikel.data.attributes.url}`} alt="berita" />
+                  </Link>
+                  <Link to={`/berita/artikel/${sideNew.id}`} key={sideNew.id}>
+                    <p>
+                      {sideNew.attributes.judulArtikel} <br />
+                      <div className="date">
+                        <img src={DateLogo} alt="..." id="logo_date" />
+                        <p>{sideNew.attributes.publishedAt}</p>
+                      </div>
+                    </p>
+                  </Link>
+                </div>
+                <div class="separator"></div>
+              </div>
+            ))}
+          </div>
+          </div> 
+          </div>      
     </>
   );
 };

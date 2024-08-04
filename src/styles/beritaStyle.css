@@ -31,11 +31,17 @@
     background-color: #F5F5F5;
     margin-bottom: 35px;
     width: 101%;
-    padding-left: 0px;
+    margin-left: 15px;    
 }
 #news img{
     width: 20%;
     margin-right: 13px;
+}
+.news-thumbnail{
+    max-width: 80px;
+    max-height: 60px;
+    min-width: none;
+    min-height: none;
 }
 .newscontent{
     display: flex;
@@ -44,7 +50,7 @@
 #side_news{
     margin-bottom: 10px;
     width: 33vw;
-    margin-right: 50px;
+    margin-right: 40px;
 }
 .SideNewsContent{
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);

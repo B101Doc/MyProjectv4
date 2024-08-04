@@ -7,7 +7,8 @@ import 'react-social-icons/youtube'
 
 const Footer = () => {
     return(
-        <footer className="footer">
+        <footer>
+        <div className="footer">
             <div className="container" id="profil_kontak">
                 <div className="profil">
                 <h5><b><Link to={"/profil"}>Profil</Link></b></h5>
@@ -23,8 +24,19 @@ const Footer = () => {
             <SocialIcon url='https://www.instagram.com/ngaglik_official?igsh=MnI1aDNpcmNkd3Bo'/> <SocialIcon url="https://youtube.com/@daringanngagliktvdesa1477?si=5xiG_4P0Z_pfbKMR" /></p>
                 <a href=""></a>
                 </div>
+            </div>            
+        </div>
+        <div className="watermark">
+        <div className="container" id="wm">
+            <div className="webDesa">
+                <p>WebsiteDesa</p>
             </div>
-        </footer>
+            <div className="uniBraw">
+                <p><b>2024 © Universitas Brawijaya</b></p>
+            </div>
+        </div>
+    </div>
+    </footer>
     );
 };
 
